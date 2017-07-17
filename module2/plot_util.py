@@ -104,12 +104,12 @@ def plot_rewards(n_episodes, rewards, average_range=10):
     """
     smoothed_rewards = (conv(rewards, np.ones(average_range), mode='same')
                         / average_range)
-    fig = plt.figure()
+    # fig = plt.figure()
     plt.plot(range(0, n_episodes, average_range),
              smoothed_rewards[0:n_episodes:average_range],
              marker='o', linestyle='--')
     plt.xlabel('Episodes')
     plt.ylabel('Total reward')
-    return fig
+    return plt.gcf()
 
 
